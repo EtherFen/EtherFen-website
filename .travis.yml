@@ -18,7 +18,7 @@ after_script:
   - git config --global user.email "franciswei98@gmail.com"
   - git add .
   - git commit -m "Update docs"
-  - git push --force --quiet "https://${DEPLOY_KEY}@${GH_REF}" gh-pages:gh-pages
+  - git push --force --quiet "https://${DEPLOY_KEY}@${GH_REF}" master:gh-pages
 
 branches:
 only:
