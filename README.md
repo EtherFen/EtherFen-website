@@ -1,6 +1,6 @@
-# cryptomingbi-website
+# EtherFen-website
 
-> A Vue.js project
+> The world's first dApp in funeral industry.
 
 ## Build Setup
 
