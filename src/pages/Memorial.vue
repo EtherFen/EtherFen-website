@@ -2,7 +2,7 @@
 #memorial
   el-table(:data="cashes")
     el-table-column(prop="identity", label="发行编号")
-    el-table-column(prop="address", label="烧钱人")
+    el-table-column(prop="address", label="坟墓持有人")
     el-table-column(prop="data", label="烧至")
   el-pagination(
     @current-change="handleCurrentChange"
@@ -26,8 +26,8 @@ export default {
     };
   },
   methods: {
-    getMingbies() {
-      this.wallet.contract.getMingbiBurnt((error, result) => {
+    getTombs() {
+      this.wallet.contract.getTombBurnt((error, result) => {
         if (error) {
           this.$message({
             type: 'error',
@@ -42,7 +42,7 @@ export default {
       });
     },
     getDetail(index) {
-      this.wallet.contract.getMingbiDetail(this.ids[index], (error, result) => {
+      this.wallet.contract.getTombDetail(this.ids[index], (error, result) => {
         if (error) {
           this.$message({
             type: 'error',
@@ -50,7 +50,7 @@ export default {
           });
         } else {
           this.cashes.push({
-            identity: `冥第 ${this.ids[index].toString()} 号`,
+            identity: `坟第 ${this.ids[index].toString()} 号`,
             address: result[1],
             data: result[2],
           });
@@ -66,7 +66,7 @@ export default {
     },
   },
   mounted() {
-    this.getMingbies();
+    this.getTombs();
   },
 };
 </script>

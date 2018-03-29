@@ -1,6 +1,7 @@
 import Web3 from 'web3';
 import abi from '@/assets/abi.json';
 
+const ContractAddress = '0x2471e7b864f03cc12a482a08a49b603b3967c7ae';
 export default class Wallet {
   constructor(instance) {
     this.instance = instance;
@@ -21,7 +22,8 @@ export default class Wallet {
     this.account = this.wallet.eth.accounts[0];
     this.wallet.eth.defaultAccount = this.account;
     const Contract = this.wallet.eth.contract(abi);
-    this.contract = Contract.at('0x399468D1dC0d219CB9812B1e1a64acdf9B677a0a');
+    // On test network
+    this.contract = Contract.at(ContractAddress);
   }
 
   toWei(price) {

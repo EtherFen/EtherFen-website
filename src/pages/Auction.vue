@@ -1,17 +1,10 @@
 <template lang="pug">
 #auction
-  img.cash(src="/static/cash.jpg")
-  h2
-    | 冥币实时发行价格：{{ price }} ETH
-  h2
-    | 即将发行冥币唯一编号：冥第 {{ totalSupply }} 号
-  p
-    | 注：
-    | 为同时控制阴间通胀人间的囤积天地通用货币之行为，
-    | 每申请发行一张冥币，将导致人间冥币发行价的上涨，
-    | 每烧一张冥币，人间冥币的发行价将下跌。
-  el-button(type="primary", @click="applyAuction")
-    | 请求发行
+  img.cash(src="https://ws2.sinaimg.cn/large/006tNc79ly1fprq46v3ovj31kw14n7wh.jpg")
+  h2| 以太坟实时发行价格：{{ price }} ETH
+  h2| 即将发行以太坟唯一编号：坟第 {{ totalSupply }} 号
+  p| #[i.el-icon-circle-check-outline] 我已知晓购买以太坟为捐献行为，不可退款
+  el-button(type="primary", @click="applyAuction" round size='large' icon='el-icon-check')| 购买坟墓
 </template>
 
 <script>
@@ -24,6 +17,7 @@ export default {
       wallet: new Wallet(this),
       price: 0,
       totalSupply: '0',
+      data: '114514',
     };
   },
   methods: {
@@ -52,7 +46,7 @@ export default {
       });
     },
     applyAuction() {
-      this.wallet.contract.breed({
+      this.wallet.contract.buyAndCrave(this.data, {
         value: this.wallet.toWei(this.price),
         gas: 220000,
         gasPrice: 1000000000 * 20,

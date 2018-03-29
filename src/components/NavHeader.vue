@@ -2,22 +2,22 @@
 el-menu.menu(router, :default-active="$route.path", :default-openeds="['/']", mode="horizontal")
   el-menu-item(index="/")
     span(slot="title")
-      | 以太冥币
+      | 以太坟
   el-menu-item(index="/home")
     span(slot="title")
       | 首页
-  el-menu-item(index="/auction")
+  el-menu-item(index="/buy")
     span(slot="title")
-      | 冥币发行
+      | 购买
   el-menu-item(index="/my")
     span(slot="title")
-      | 我的冥币
+      | 我的坟
   el-menu-item(index="/memorial")
     span(slot="title")
       | 纪念堂
-  el-menu-item(index="/trade", disabled)
+  el-menu-item(index="/faq")
     span(slot="title")
-      | 交易所（暂未开放）
+      | FAQ
 </template>
 
 <script>

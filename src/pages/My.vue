@@ -1,13 +1,19 @@
 <template lang="pug">
 #my
+  .tip
+    p|刚刚买了坟墓，还没显示？
+    |别着急，发起区块链交易后需要一定的时间确认交易的有效性
+    |通常一分钟后刷新就会出现你的交易。
+    p|如果还没有出现，请到
+      a(:href='getAccountEtherscanURL()')| EtherScan 查看交易情况
   el-table(:data="mine")
     el-table-column(prop="identity", label="发行编号")
     el-table-column(label="操作")
       template(slot-scope="scope")
         el-button(size="mini", @click="transfer(scope.row.raw)")
-          | 转账
+          | 转移
         el-button(size="mini", type="danger", @click="burn(scope.row.raw)")
-          | 燃烧
+          | 雕刻
 </template>
 
 <script>
@@ -22,8 +28,8 @@ export default {
     };
   },
   methods: {
-    getMingbies() {
-      this.wallet.contract.getMingbiByOwner(this.wallet.account, (error, result) => {
+    getTombs() {
+      this.wallet.contract.getTombByOwner(this.wallet.account, (error, result) => {
         if (error) {
           this.$message({
             type: 'error',
@@ -33,15 +39,18 @@ export default {
           this.mine = []; // clear up
           result.forEach((val) => {
             this.mine.push({
-              identity: `冥第 ${val.toString()} 号`,
+              identity: `坟第 ${val.toString()} 号`,
               raw: val,
             });
           });
         }
       });
     },
+    getAccountEtherscanURL() {
+      return `https://ropsten.etherscan.io/address/${this.wallet.account}`;
+    },
     transfer(id) {
-      this.$prompt('请输入转账对象地址', '提示', {
+      this.$prompt('请输入转移对象地址', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
       }).then(({ value }) => {
@@ -84,11 +93,20 @@ export default {
     },
   },
   mounted() {
-    this.getMingbies();
+    this.getTombs();
   },
 };
 </script>
 
 <style lang="stylus" scoped>
-
+.tip {
+    padding 8px 16px
+    background-color #ecf8ff
+    border-radius 4px
+    border-left 5px solid #50bfff
+    margin 20px 0
+    font-size 14px
+    color #5e6d82
+    line-height 1.5em
+}
 </style>

@@ -89,7 +89,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "getMingbiDetail",
+		"name": "getTombDetail",
 		"outputs": [
 			{
 				"name": "",
@@ -112,11 +112,11 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "f",
+				"name": "newPrice",
 				"type": "uint256"
 			}
 		],
-		"name": "changeFactor",
+		"name": "changePrice",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -153,7 +153,21 @@
 	{
 		"constant": false,
 		"inputs": [],
-		"name": "breed",
+		"name": "buy",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "data",
+				"type": "string"
+			}
+		],
+		"name": "buyAndCrave",
 		"outputs": [],
 		"payable": true,
 		"stateMutability": "payable",
@@ -264,7 +278,7 @@
 				"type": "address"
 			}
 		],
-		"name": "getMingbiByOwner",
+		"name": "getTombByOwner",
 		"outputs": [
 			{
 				"name": "",
@@ -283,7 +297,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "mingbiToOwner",
+		"name": "tombToOwner",
 		"outputs": [
 			{
 				"name": "",
@@ -297,7 +311,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "getMingbiBurnt",
+		"name": "getTombBurnt",
 		"outputs": [
 			{
 				"name": "",

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Telegram",
+        "icon": "icon-telegram",
+        "url": "https://t.me/joinchat/BVI63w_Gd3VBSmC6AYVLPQ"
+    },
+    {
+        "title": "Twitter",
+        "icon": "icon-twitter",
+        "url": "https://twitter.com/etherfen"
+    },
+    {
+        "title": "Github",
+        "icon": "icon-github",
+        "url": "https://github.com/EtherFen/"
+    }
+]
