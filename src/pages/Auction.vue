@@ -3,8 +3,10 @@
   img.cash(src="https://ws2.sinaimg.cn/large/006tNc79ly1fprq46v3ovj31kw14n7wh.jpg")
   h2| 以太坟实时发行价格：{{ price }} ETH
   h2| 即将发行以太坟唯一编号：坟第 {{ totalSupply }} 号
-  p| #[i.el-icon-circle-check-outline] 我已知晓购买以太坟为捐献行为，不可退款
-  el-button(type="primary", @click="applyAuction" round size='large' icon='el-icon-check')| 购买坟墓
+  el-checkbox(v-model="isAgree")|我已阅读 #[router-link(to="/faq")| 常见问题 ]
+                                |并知晓以太坟不是ICO而是区块链信息存储服务
+  el-button(type="primary", @click="applyAuction"
+  round size='large' icon='el-icon-check' :disabled='!isAgree')| 购买坟墓
 </template>
 
 <script>
@@ -17,6 +19,7 @@ export default {
       wallet: new Wallet(this),
       price: 0,
       totalSupply: '0',
+      isAgree: false,
       data: '114514',
     };
   },

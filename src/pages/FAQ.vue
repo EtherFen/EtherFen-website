@@ -2,7 +2,7 @@
   #faq
     h1| 常见问题 Frequently Asked Questions
     .question-box(v-for="qa in qna" :key="question")
-        question| {{qa.question}}？
+        question| {{qa.question}}?
         p.answer| {{qa.answer}}
 </template>
 
@@ -31,7 +31,7 @@ export default {
     border-radius: 4px;
     border-left: 5px solid #50bfff;
     margin: 20px 0;
-    font-size: 14px;
+    font-size: 16px;
     color: #5e6d82;
     line-height: 1.5em;
 }

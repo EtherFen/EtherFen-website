@@ -26,5 +26,5 @@ only:
 
 env:
  global:
-   - GH_REF: github.com:EtherFen/EtherFen-website.git
+   - GH_REF: github.com/EtherFen/EtherFen-website.git
    - BRANCHES: gh-pages
