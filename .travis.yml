@@ -1,0 +1,30 @@
+language: node_js
+node_js: stable
+
+dist: trusty
+sudo: false
+cache: yarn
+# S: Build Lifecycle
+install:
+- yarn
+
+script:
+- yarn run build
+
+after_script:
+  - cd ./dist
+  - git init
+  - git config --global user.name "Frank Wei"
+  - git config --global user.email "franciswei98@gmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${DEPLOY_KEY}@${GH_REF}" master:${BRANCHES}
+
+branches:
+only:
+- master
+
+env:
+ global:
+   - GH_REF: github.com:EtherFen/EtherFen-website.git
+   - BRANCHES: gh-pages
