@@ -13,6 +13,7 @@ script:
 
 after_script:
   - cd ./dist
+  - echo 'www.etherfen.com' >> CNAME
   - git init
   - git config --global user.name "Frank Wei"
   - git config --global user.email "franciswei98@gmail.com"
