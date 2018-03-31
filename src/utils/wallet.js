@@ -1,7 +1,8 @@
 import Web3 from 'web3';
 import abi from '@/assets/abi.json';
 
-const ContractAddress = '0x2471e7b864f03cc12a482a08a49b603b3967c7ae';
+// On Main Network
+const ContractAddress = '0x0c01d1a41f21863c194c8e948054f8e3a433c424';
 export default class Wallet {
   constructor(instance) {
     this.instance = instance;
@@ -10,7 +11,7 @@ export default class Wallet {
     } else {
       instance.$message({
         type: 'error',
-        message: '没有找到 Web3 插件，无法交易, 考虑一下安装 MetaMask 插件？',
+        message: '没有找到浏览器 Web3 插件，无法购买以太坟, 谷歌浏览器用户考虑一下安装 MetaMask 来进行交互？',
       });
     }
     if (this.wallet.eth.accounts.length === 0) {

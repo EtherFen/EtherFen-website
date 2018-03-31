@@ -1,6 +1,7 @@
 # EtherFen-website
 
 > The world's first dApp in funeral industry.
+> Inspired by [cryptomingbi](https://github.com/cryptomingbi), this code couldn't be built fast withour their code.
 
 ## Build Setup
 

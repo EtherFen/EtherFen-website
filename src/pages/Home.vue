@@ -2,10 +2,12 @@
 #home
   .banner
     h1.title| 以太坟
+    i.iconfont(class='icon-taiji' style="float: right;")
     p| 全球第一个基于区块链技术打造的数字坟墓
     router-link(to="/buy")
       el-button(type="info" round size='large')|立即购买
-    el-button(type="info" round size='large' @click="withdraw()")|Withdraw
+    router-link(to="/faq")
+    el-button(type="info" round size='large')|常见问题
   .intro
     h2| 项目特色
     el-row(:gutter="20")
@@ -18,7 +20,6 @@
       i.iconfont(:class='passage.icon' style="float: left;")
       h2|{{passage.title}}
       p|{{passage.content}}
-  social(:ways="socialMedia")
 
 
 </template>
@@ -26,14 +27,9 @@
 <script>
 import Wallet from '@/utils/wallet';
 import cards from '../data/info.json';
-import Social from '../components/social';
-import SocialMediaInfo from '../data/social.json';
 
 export default {
   name: 'Home',
-  components: {
-    Social,
-  },
   data() {
     return {
       wallet: new Wallet(this),
@@ -49,7 +45,7 @@ export default {
           title: '技术',
           icon: 'icon-jishu',
           content:
-            '以太坟正在建设世界上第一个完全去中心的线上坟墓。作为分布式的网络，以太坟会成为怀恋先人的有利替代选择。',
+            '以太坟是世界上第一个完全去中心的线上坟墓。作为分布式的网络，以太坟会成为怀恋先人的有利替代选择。',
         },
         {
           title: '商业',
@@ -58,25 +54,9 @@ export default {
             '互联网+传统文化+区块链，开阔全新市场，整合中华文化传统瑰宝，更好的传承博大精深的中华文化。',
         },
       ],
-      socialMedia: SocialMediaInfo,
     };
   },
   methods: {
-    withdraw() {
-      this.wallet.contract.withdrawBalance((error, result) => {
-        if (error) {
-          this.$message({
-            type: 'error',
-            message: error,
-          });
-        } else {
-          this.$message({
-            type: 'info',
-            message: `已请求 ${result}`,
-          });
-        }
-      });
-    },
   },
 };
 </script>

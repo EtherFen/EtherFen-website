@@ -1,8 +1,8 @@
 <template lang="pug">
   #faq
     h1| 常见问题 Frequently Asked Questions
-    .question-box(v-for="qa in qna" :key="question")
-        question| {{qa.question}}?
+    .question-box(v-for="(qa,idx) in qna" :key="idx")
+        .question| {{qa.question}}?
         p.answer| {{qa.answer}}
 </template>
 
@@ -36,7 +36,7 @@ export default {
     line-height: 1.5em;
 }
 
-.question-box question {
+.question-box .question {
     font-weight: 500;
     font-size: 1.3em;
 }

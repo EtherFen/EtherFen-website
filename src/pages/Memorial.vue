@@ -1,33 +1,32 @@
 <template lang="pug">
 #memorial
-  el-table(:data="cashes")
-    el-table-column(prop="identity", label="发行编号")
-    el-table-column(prop="address", label="坟墓持有人")
-    el-table-column(prop="data", label="烧至")
-  el-pagination(
-    @current-change="handleCurrentChange"
-    :current-page.sync="currentPage"
-    :page-size="10"
-    layout="total, prev, pager, next, jumper"
-    :total="ids.length")
+  .tip
+    h2|法律声明
+    p|以下内容均为用户在区块链所发表的内容，EtherFen 作为去中心化应用，不对用户输入内容负任何责任
+  tombs-table(:tombsDetail="tombs" :isOwner="false")
 </template>
 
 <script>
 import Wallet from '@/utils/wallet';
+import TombsTable from '../components/TombsTable';
+import digestData from '../DataHandler';
 
 export default {
   name: 'Memorial',
+  components: {
+    TombsTable,
+  },
   data() {
     return {
       wallet: new Wallet(this),
       ids: [],
-      cashes: [],
+      tombs: [],
       currentPage: 1,
     };
   },
   methods: {
     getTombs() {
-      this.wallet.contract.getTombBurnt((error, result) => {
+      this.wallet.contract.getAllTombs((error, result) => {
         if (error) {
           this.$message({
             type: 'error',
@@ -49,11 +48,13 @@ export default {
             message: error,
           });
         } else {
-          this.cashes.push({
-            identity: `坟第 ${this.ids[index].toString()} 号`,
-            address: result[1],
-            data: result[2],
-          });
+          const obj = digestData(index, result);
+          this.tombs.push(obj);
+          // this.tombs.push({
+          //   identity: `坟第 ${this.ids[index].toString()} 号`,
+          //   address: result[1],
+          //   data: result[2],
+          // });
           if (index + 1 < 10 * this.currentPage && index + 1 < this.ids.length) {
             this.getDetail(index + 1);
           }
@@ -61,7 +62,7 @@ export default {
       });
     },
     handleCurrentChange() {
-      this.cashes = [];
+      this.tombs = [];
       this.getDetail((this.currentPage - 1) * 10);
     },
   },

@@ -1,6 +1,6 @@
 [
     {
-        "title": "Telegram",
+        "title": "Telegram 交流群",
         "icon": "icon-telegram",
         "url": "https://t.me/joinchat/BVI63w_Gd3VBSmC6AYVLPQ"
     },
@@ -13,5 +13,10 @@
         "title": "Github",
         "icon": "icon-github",
         "url": "https://github.com/EtherFen/"
+    },
+    {
+        "title": "Medium",
+        "icon": "icon-medium",
+        "url": "https://medium.com/etherfen-project-%E4%BB%A5%E5%A4%AA%E5%9D%9F"
     }
 ]

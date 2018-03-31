@@ -11,10 +11,10 @@ el-menu.menu(router, :default-active="$route.path", :default-openeds="['/']", mo
       | 购买
   el-menu-item(index="/my")
     span(slot="title")
-      | 我的坟
+      | 我的以太坟
   el-menu-item(index="/memorial")
     span(slot="title")
-      | 纪念堂
+      | 墓园
   el-menu-item(index="/faq")
     span(slot="title")
       | FAQ
