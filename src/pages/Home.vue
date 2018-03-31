@@ -63,7 +63,7 @@ export default {
 
 <style lang="stylus" scoped>
 #home {
-  max-width: 75%;
+  max-width: 95%;
   margin: 0 auto;
 }
 
