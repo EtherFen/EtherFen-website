@@ -42,6 +42,7 @@ export default {
     },
     getDetail(index) {
       this.wallet.contract.getTombDetail(this.ids[index], (error, result) => {
+        console.log(result);
         if (error) {
           this.$message({
             type: 'error',
@@ -50,11 +51,6 @@ export default {
         } else {
           const obj = digestData(index, result);
           this.tombs.push(obj);
-          // this.tombs.push({
-          //   identity: `坟第 ${this.ids[index].toString()} 号`,
-          //   address: result[1],
-          //   data: result[2],
-          // });
           if (index + 1 < 10 * this.currentPage && index + 1 < this.ids.length) {
             this.getDetail(index + 1);
           }

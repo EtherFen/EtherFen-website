@@ -100,10 +100,11 @@ export default {
     },
     applyAuction() {
       const personData = this.personData;
-      const safeName = name.replace(',', ' ');
+      const safeName = personData.name.replace(',', ' ');
       const start = personData.start / 1000;
       const end = personData.end / 1000;
       const dataStr = `${safeName},${start},${end}`;
+      console.log(dataStr);
       this.wallet.contract.buyAndCrave(
         dataStr,
         {
