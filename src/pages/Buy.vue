@@ -9,7 +9,7 @@
       img.cash(src="https://ws2.sinaimg.cn/large/006tNc79ly1fprq46v3ovj31kw14n7wh.jpg")
       h2| Price：{{ price }} ETH
       h2| Est. next tomb number：No. {{ totalSupply }}
-      h4| Your will need MetaMask for this purchase
+      h4| You will need MetaMask for this purchase
       el-checkbox(v-model="isAgree")| I have read #[router-link(to="/faq")| FAQ ]
                                     |and accept those claim
       br
