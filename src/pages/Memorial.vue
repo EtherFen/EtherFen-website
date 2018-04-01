@@ -1,8 +1,8 @@
 <template lang="pug">
 #memorial
   .tip
-    h2|法律声明
-    p|以下内容均为用户在区块链所发表的内容，EtherFen 作为去中心化应用，不对用户输入内容负任何责任
+    h2|Disclaimer
+    p|We are not responsible for user's input.
   tombs-table(:tombsDetail="tombs" :isOwner="false")
 </template>
 

@@ -14,11 +14,14 @@ const getDate =
 function handle(idx, result) {
   const obj = {
     id: idx,
-    identity: `坟第 ${idx.toString()} 号`,
+    identity: `No. ${idx.toString()}`,
     address: result[1],
     data: result[2],
   };
   const data = obj.data.split(',');
+  if (data[0] === '') {
+    data[0] = 'John Doe';
+  }
   obj.data = {
     name: data[0],
     start: getDate(data[1]),

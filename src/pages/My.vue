@@ -1,12 +1,13 @@
 <template lang="pug">
 #my
   .tip
-    h2|刚刚买了坟墓，还没显示？
-    p|别着急，发起区块链交易后需要一定的时间确认交易的有效性
-    |通常一分钟后刷新就会出现你的交易。
-    p|如果还没有出现，请到
-      a(:href='getAccountEtherscanURL()')| EtherScan 查看当前账户的交易情况
-  h2|我的坟墓
+    h2|Not showing yet？
+    p| Don't worry. A certain amount of time is required after the initiation
+     | of the blockchain transaction to confirm the validity of the transaction
+     | Usually your transaction will appear after a minute refresh.
+    p| Also you can check out your
+     | transaction with #[a(:href='getAccountEtherscanURL()')| EtherScan]
+  h2| My EtherFen
   tombs-table(:tombsDetail="mineDetail" :isOwner="true")
 
 </template>

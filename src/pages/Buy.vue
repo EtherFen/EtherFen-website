@@ -1,40 +1,42 @@
 <template lang="pug">
 #auction
   el-steps(:active="stepIdx" style=" margin-bottom: 20px; " simple)
-      el-step(title="开始" icon="el-icon-document")
-      el-step(title="私人订制" icon="el-icon-edit")
-      el-step(title="购买成功" icon="el-icon-check")
+      el-step(title="Start" icon="el-icon-document")
+      el-step(title="Custom" icon="el-icon-edit")
+      el-step(title="Success" icon="el-icon-check")
   .steps
     .step1(v-show="stepIdx === 0")
       img.cash(src="https://ws2.sinaimg.cn/large/006tNc79ly1fprq46v3ovj31kw14n7wh.jpg")
-      h2| 以太坟实时发行价格：{{ price }} ETH
-      h2| 预测下一个以太坟：坟第 {{ totalSupply }} 号
-      el-checkbox(v-model="isAgree")|我已阅读 #[router-link(to="/faq")| 常见问题 ] 并知晓所有声明
+      h2| Price：{{ price }} ETH
+      h2| Est. next tomb number：No. {{ totalSupply }}
+      h4| Your will need MetaMask for this purchase
+      el-checkbox(v-model="isAgree")| I have read #[router-link(to="/faq")| FAQ ]
+                                    |and accept those claim
       br
       el-button(type="primary", @click="stepIdx++"
-        round size='large' icon='el-icon-check' :disabled='!isAgree')| 继续购买以太坟
+        round size='large' icon='el-icon-check' :disabled='!isAgree')| Next
 
     el-form(label-position="right" label-width="80px" :model="personData" v-show="stepIdx === 1")
-      el-form-item(label="名称")
+      el-form-item(label="Name")
         el-input(v-model="personData.name")
 
-      el-form-item(label="生于")
+      el-form-item(label="Date of Born")
         el-date-picker(
         v-model="personData.start"
         type="date"
-        placeholder="选择出生日期"
+        placeholder="Please choose DoB"
         value-format="timestamp")
 
-      el-form-item(label="死于")
+      el-form-item(label="Death Date")
         //- el-input(v-model="personData.end")
         el-date-picker(
         v-model="personData.end"
         type="date"
-        placeholder="选择死亡日期"
+        placeholder="Please choose DD"
         value-format="timestamp")
 
       el-button(type="primary", @click="applyAuction"
-        round size='large' icon='el-icon-check' :disabled='isAllEntered')| 购买坟墓
+        round size='large' icon='el-icon-check' :disabled='isAllEntered')| Buy with MetaMask
     success(:txId="txId" v-if="stepIdx === 2")
 
 </template>

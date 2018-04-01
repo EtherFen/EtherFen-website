@@ -2,19 +2,19 @@
 el-menu.menu(router, :default-active="$route.path", :default-openeds="['/']", mode="horizontal")
   el-menu-item(index="/")
     span(slot="title")
-      | 以太坟
+      | EtherFen (以太坟)
   el-menu-item(index="/home")
     span(slot="title")
-      | 首页
+      | Home
   el-menu-item(index="/buy")
     span(slot="title")
-      | 购买
+      | Buy 购买
   el-menu-item(index="/my")
     span(slot="title")
-      | 我的以太坟
+      | My tombs 我的坟墓
   el-menu-item(index="/memorial")
     span(slot="title")
-      | 墓园
+      | Graveyard 墓 园
   el-menu-item(index="/faq")
     span(slot="title")
       | FAQ

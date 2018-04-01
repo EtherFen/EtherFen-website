@@ -1,15 +1,15 @@
 <template lang="pug">
 .tomb-table
   el-table(:data="tombsDetail")
-    el-table-column(prop="identity", label="发行编号")
-    el-table-column(prop="address", label="雕刻者")
-    el-table-column(prop="data.name", label="死者")
-    el-table-column(prop="data.start", label="出生")
-    el-table-column(prop="data.end", label="死于")
-    el-table-column(label="操作" v-if="isOwner")
+    el-table-column(prop="identity", label="No")
+    el-table-column(prop="address", label="Buyer")
+    el-table-column(prop="data.name", label="Name")
+    el-table-column(prop="data.start", label="D.O.B")
+    el-table-column(prop="data.end", label="D.D")
+    el-table-column(label="Act" v-if="isOwner")
       template(slot-scope="scope")
         el-button(size="mini", @click="transfer(scope.row.id)")
-          | 转移
+          | Transfer
   el-pagination(
     @current-change="handleCurrentChange"
     :current-page.sync="currentPage"

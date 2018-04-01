@@ -1,46 +1,30 @@
 [
     {
-        "question": "什么是以太坟",
-        "answer": "以太坟 (EtherFen, ETF) 是全球第一个基于人类共识上使用区块链(Blockchain)技术和密码学(Cryptography)打造的区块链坟墓，以太坟寄存在世界上最大的区块链分布式应用平台以太坊(Ethernum)上。 区块链技术的出现不但是一种技术应用的大革新，更是一种人与人合作的生产关系的变革。它让信任变的易得，让合作变得简单，为大规模的人之间的协作提供了良好的基础。"
+        "question": "What is EtherFen",
+        "answer": "EtherFen (Chinese: 以太坟, ETF) is the world's first blockchain-based digital graves built on blockchain technology and cryptography based on human consensus. EtherFen is hosted on the world's largest blockchain distributed application platform Ethereum. The emergence of blockchain technology is not only a major innovation in the application of technology, but also a change in the relationship of production that involves people and people. It makes trust easy to get, makes cooperation easy, and provides a good foundation for large-scale collaboration among people."
     },
     {
-        "question": "请说人话",
-        "answer": "不好意思，被各路ICO推销语洗脑了。以太坟就是把坟墓的消息记载在区块链上。以太坟放在以太坊的区块链上，不会因为这个网站倒闭而消失。"
+        "question": "Cut those B.S, please",
+        "answer": "Sorry, I was brainwashed by various ICO sales pitches and airdrops. EtherFen is satire to all those non-sense speaking Token ICO. Anyhow, EtherFen on the EtherFen blockchain will not disappear because of the collapse of this site for sure."
     },
     {
-        "question": "以太坟技术上是什么",
-        "answer": "以太坟是实现了 ERC721 标准的以太坊非同质 (non-fungible) 代币 (Token)。"
+        "question": "What is Fen",
+        "answer": "Fen (Chinese: 坟) is Chinese word for tomb. I named it for naming pun."
     },
     {
-        "question": "以太坟是ICO (首次代币发行) 吗",
-        "answer": "不是！不是！不是！我不想被喝茶！我只想要你们自愿购买这个区块链记载服务。"
+        "question": "What is EtherFen, Technically",
+        "answer": "EtherFen is a non-fungible Token that comply with Ethereum ERC721 standard."
     },
     {
-        "question": "还不是代币，你凭什么说和别人ICO不一样",
-        "answer": "首先，我们并不保证以太坟代币本身有任何的价值与权益，因为ERC721代币可以按需发行，最多可发行340282366920938463463374607431768211456 (2的128次方)个以太坟。\n 当你购买以太坟时，代表你已经知晓购买以太坟是把数据存放在区块链的服务，唯一权益就是把数据存放在区块链。"
+        "question": "Can I exchange EtherFen with somebody",
+        "answer": "Sure，EtherFen can be transferred to other Ethereum wallets. But you shouldn’t be thinking about that, right? "
     },
     {
-        "question": "以太坟可以交易吗",
-        "answer": "可以，以太坟是 ERC721 标准的以太坊非同质代币，代表的是数字资产（以太坊是这么定义的），可以转让到其他以太坊钱包。不过你们应该不会炒坟墓的，对吧？直接在EtherFen.com买就行了。"
+        "question": "Is it valuable?",
+        "answer": "It depends on how you see it."
     },
     {
-        "question": "以太坟真的去中心化吗？我买的以太坟会不会因为网站倒闭而消失",
-        "answer": "以太坟基于区块链技术打造，存放在以太坊网络，天生具有去中心化的特性，以太坟并不会因为EtherFen.com 的倒闭而消失。我们决定把网站放在 Github，并开放源码，当 etherfen.com 倒闭时，你可以在自己本机继续仰望存放在区块链上的先人墓碑。"
-    },
-    {
-        "question": "以太坟对比传统的互联网坟墓有什么优势",
-        "answer": "以太坟基于区块链技术打造，天生具有去中心化的特性，以太坟不因本网站倒闭而消失，以太坟分布在区块链网络的机器中，基于社区共识而存在，不可修改"
-    },
-
-    {
-        "question": "以太坟的购买，篆刻为什么收取交易费用",
-        "answer": "以太坟是基于以太坊网络的分布式应用 (DApp)，任何对以太坟的变动（包括但不限于购买，篆刻）都要向以太坊网络广播，需要付出维持以太坟正常运行的费用（俗称矿工费）"
-    },
-    {
-        "question": "为什么你不担保以太坟有任何价值",
-        "answer": "因为我不想进局子，我也想赚点以太坊。作为一个区块链技术玩家，希望大家心中有杆秤。"
-    },    {
-        "question": "致谢",
-        "answer": "以太坟的建立受到了以太冥币(https://mingbi.io) 的启发，使用了以太冥币的部分代码。在此感谢Delton Ding的绝妙创意。"
+        "question": "Thank",
+        "answer": "The establishment of the EtherFen was inspired by https://mingbi.io, which we used part of the code. Thanks to Delton Ding for his wonderful ideas."
     }
 ]
