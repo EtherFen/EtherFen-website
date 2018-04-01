@@ -42,7 +42,6 @@ export default {
     },
     getDetail(index) {
       this.wallet.contract.getTombDetail(this.ids[index], (error, result) => {
-        console.log(result);
         if (error) {
           this.$message({
             type: 'error',
